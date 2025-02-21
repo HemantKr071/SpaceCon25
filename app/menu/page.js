@@ -1,6 +1,6 @@
 "use client";
 
-import { Index } from "./Index";
+import { Index } from "./_components/Index";
 
 const menuItems = [
     {
