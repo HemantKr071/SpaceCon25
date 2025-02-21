@@ -1,5 +1,5 @@
 "use client";
-import { MenuCard} from "./MenuCard";
+import { MenuCard} from "./Menucard";
 import { motion } from "framer-motion";
 import { Rocket, Star } from "lucide-react";
 
