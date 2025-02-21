@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 
-export const MenuCard = ({ name, price, description, image, category }) => {
+export const Menucard = ({ name, price, description, image, category }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
