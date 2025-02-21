@@ -10,6 +10,7 @@ import { FeaturedDishes } from "./FeaturedDishes";
 import PlanetButton from "./PlanetButton";
 import { Astronaut } from "./Astronaut";
 import Link from "next/link";
+import { SocialMedia } from "./SocialMedia";
 const LandingPage = () => {
   const [isHovered, setIsHovered] = useState(null);
 
@@ -57,7 +58,7 @@ const LandingPage = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-6 text-white">
           Astro Dine
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 text-center max-w-2xl mb-8">
+        <p className="text-lg md:text-xl text-gray-300 text-center max-w-2xl mb-8 line-clamp-3">
           Experience extraordinary dining among the stars, where each dish is crafted to take you on an interstellar journey.
         </p>
         <Link href = "/menu" >
@@ -112,6 +113,7 @@ const LandingPage = () => {
               </motion.div>
             ))}
           </div>
+          <SocialMedia/>
         </div>
       </section>
     </div>
