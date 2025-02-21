@@ -1,5 +1,5 @@
 "use client";
-import { Menucard } from "./MenuCard";
+import { MenuCard} from "./MenuCard";
 import { motion } from "framer-motion";
 import { Rocket, Star } from "lucide-react";
 
@@ -160,7 +160,7 @@ export const Index = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {menuItems.map((item, index) => (
-                <Menucard key={index} {...item} />
+                <MenuCard key={index} {...item} />
               ))}
             </div>
           </div>
