@@ -1,6 +1,7 @@
 "use client";
-
-import { Index } from "./Index";
+import { MenuCard } from "./_components/MenuCard";
+import { motion } from "framer-motion";
+import { Rocket, Star } from "lucide-react";
 
 const menuItems = [
     {
@@ -88,11 +89,83 @@ const menuItems = [
       category: "Space Desserts"
     }
   ];
-const Home = () => {
+export const Index = () => {
     return (
-        <div>
-            <Index/>
-        </div>
+      <div className="min-h-screen bg-space-gradient text-white overflow-hidden bg-gradient-to-r from-slate-900 to-slate-700">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 z-0 opacity-30">
+            {[...Array(50)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute h-1 w-1 bg-white rounded-full"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.7, 1, 0.7],
+                }}
+                transition={{
+                  duration: Math.random() * 3 + 2,
+                  repeat: Infinity,
+                  delay: Math.random() * 2,
+                }}
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+              />
+            ))}
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 max-w-4xl mx-auto text-center"
+          >
+            <motion.div 
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="inline-block mb-6"
+            >
+              <Star className="w-12 h-12 text-yellow-400" />
+            </motion.div>
+            <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-space-grotesk tracking-tight">
+              Astro Dine Cravings
+            </h1>
+            <p className="text-xl text-gray-300 mb-8">
+              Out of this world flavors for your earthly cravings
+            </p>
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <Rocket className="w-8 h-8 mx-auto text-space-pink" />
+            </motion.div>
+          </motion.div>
+        </section>
+  
+        {/* Menu Section */}
+        <section className="relative py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl font-bold mb-4">Space Menu</h2>
+              <p className="text-gray-300">Explore our intergalactic selection</p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {menuItems.map((item, index) => (
+                <MenuCard key={index} {...item} />
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     );
-}
-export default Home;
+  };
+  
+ 
