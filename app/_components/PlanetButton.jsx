@@ -20,7 +20,7 @@ const PlanetButton = () => {
           <div className="asteriods-small" id="asteriod9" />
           <div className="asteriods-small" id="asteriod10" />
           <div id="saturn" />
-          <div id="explore">Explore</div>
+          <div id="explore"></div>
         </div>
       </button>
     </StyledWrapper>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 
-export const MenuCard = () => {
+export const MenuCard = ({ name, price, description, image, category }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export const MenuCard = () => {
             <h3 className="text-xl font-semibold text-white">{name}</h3>
             <Star className="w-5 h-5 text-yellow-400" />
           </div>
-          <p className="text-sm text-gray-300">{description}</p>
+          <p className="text-sm text-gray-700">{description}</p>
           <div className="inline-block bg-space-purple/30 px-3 py-1 rounded-full text-xs text-white">
             {category}
           </div>

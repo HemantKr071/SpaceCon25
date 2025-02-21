@@ -72,8 +72,9 @@ const LandingPage = () => {
       </motion.section>
       
       
-      <div className="flex justify-between gap-10 items-center">
+      <div className="flex flex-col md:flex-row justify-center gap-10 items-center">
          <PlanetButton/>
+         <div className="text-2xl text">"Step into Astro Dine, where every bite is a new adventure. Taste the galaxy’s finest dishes and experience dining that’s truly written in the stars!"</div>
          <Astronaut/>
       </div>
 
